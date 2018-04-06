@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.System", "core\Dime.Sy
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6DFE3F45-51C3-4C45-9C5A-30640B2BA696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.System.Tests", "Dime.System.Tests\Dime.System.Tests.csproj", "{2C615123-077B-4A9D-94FF-294385127503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.System.Tests", "test\Dime.System.Tests.csproj", "{2C615123-077B-4A9D-94FF-294385127503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
