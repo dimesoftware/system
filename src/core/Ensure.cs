@@ -18,9 +18,7 @@ namespace System
         /// <param name="message">Message for the exception</param>
         /// <exception cref="System.Exception">Thrown when <paramref name="condition"/> is false</exception>
         public static void That(bool condition, string message = "")
-        {
-            That<Exception>(condition, message);
-        }
+            => That<Exception>(condition, message);
 
         /// <summary>
         /// Ensures that the given expression is true
@@ -33,9 +31,7 @@ namespace System
         public static void That<TException>(bool condition, string message = "") where TException : Exception
         {
             if (!condition)
-            {
                 throw (TException)Activator.CreateInstance(typeof(TException), message);
-            }
         }
 
         /// <summary>
@@ -47,9 +43,7 @@ namespace System
         /// <exception cref="TException">Thrown when <paramref name="condition"/> is true</exception>
         /// <remarks><see cref="TException"/> must have a constructor that takes a single string</remarks>
         public static void Not<TException>(bool condition, string message = "") where TException : Exception
-        {
-            That<TException>(!condition, message);
-        }
+            => That<TException>(!condition, message);
 
         /// <summary>
         /// Ensures given condition is false
@@ -58,9 +52,7 @@ namespace System
         /// <param name="message">Message for the exception</param>
         /// <exception cref="System.Exception">Thrown when <paramref name="condition"/> is true</exception>
         public static void Not(bool condition, string message = "")
-        {
-            Not<Exception>(condition, message);
-        }
+            => Not<Exception>(condition, message);
 
         /// <summary>
         /// Ensures given object is not null
@@ -69,9 +61,7 @@ namespace System
         /// <param name="message">Message for the Null Reference Exception</param>
         /// <exception cref="System.NullReferenceException">Thrown when <paramref name="value"/> is null</exception>
         public static void NotNull(object value, string message = "")
-        {
-            That<NullReferenceException>(value != null, message);
-        }
+            => That<NullReferenceException>(value != null, message);
 
         /// <summary>
         /// Ensures given string is not null or empty
@@ -80,9 +70,7 @@ namespace System
         /// <param name="message">Message of the exception if value is null or empty</param>
         /// <exception cref="System.Exception">string value is null or empty</exception>
         public static void NotNullOrEmpty(string value, string message = "String cannot be null or empty")
-        {
-            That(!string.IsNullOrEmpty(value), message);
-        }
+            => That(!string.IsNullOrEmpty(value), message);
 
         /// <summary>
         /// Ensures given objects are equal
@@ -94,9 +82,7 @@ namespace System
         /// <exception cref="System.Exception">Exception is thrown when <paramref cref="left"/> not equal to <paramref cref="right"/></exception>
         /// <remarks>Null values will cause an exception to be thrown</remarks>
         public static void Equal<T>(T left, T right, string message = "Values must be equal")
-        {
-            That(left != null && right != null && left.Equals(right), message);
-        }
+            => That(left != null && right != null && left.Equals(right), message);
 
         /// <summary>
         /// Ensures given objects are not equal
@@ -108,9 +94,7 @@ namespace System
         /// <exception cref="System.Exception">Thrown when <paramref cref="left"/> equal to <paramref cref="right"/></exception>
         /// <remarks>Null values will cause an exception to be thrown</remarks>
         public static void NotEqual<T>(T left, T right, string message = "Values must not be equal")
-        {
-            That(left != null && right != null && !left.Equals(right), message);
-        }
+            => That(left != null && right != null && !left.Equals(right), message);
 
         /// <summary>
         /// Ensures given collection contains a value that satisfied a predicate
@@ -123,9 +107,7 @@ namespace System
         ///     Thrown if collection is null, empty or doesn't contain a value that satisfies <paramref cref="predicate"/>
         /// </exception>
         public static void Contains<T>(IEnumerable<T> collection, Func<T, bool> predicate, string message = "")
-        {
-            That(collection != null && collection.Any(predicate), message);
-        }
+            => That(collection != null && collection.Any(predicate), message);
 
         /// <summary>
         /// Ensures ALL items in the given collection satisfy a predicate
@@ -138,9 +120,7 @@ namespace System
         ///     Thrown if collection is null, empty or not all values satisfies <paramref cref="predicate"/>
         /// </exception>
         public static void Items<T>(IEnumerable<T> collection, Func<T, bool> predicate, string message = "")
-        {
-            That(collection != null && !collection.Any(x => !predicate(x)), message);
-        }
+            => That(collection != null && collection.All(predicate), message);
 
         /// <summary>
         /// Argument-specific ensure methods
@@ -156,9 +136,7 @@ namespace System
             ///     Thrown if <paramref cref="condition"/> is false
             /// </exception>
             public static void Is(bool condition, string message = "")
-            {
-                Ensure.That<ArgumentException>(condition, message);
-            }
+                => Ensure.That<ArgumentException>(condition, message);
 
             /// <summary>
             /// Ensures given condition is false
@@ -169,9 +147,7 @@ namespace System
             ///     Thrown if <paramref cref="condition"/> is true
             /// </exception>
             public static void IsNot(bool condition, string message = "")
-            {
-                Is(!condition, message);
-            }
+                => Is(!condition, message);
 
             /// <summary>
             /// Ensures given value is not null
@@ -182,9 +158,7 @@ namespace System
             ///     Thrown if <paramref cref="value" /> is null
             /// </exception>
             public static void NotNull(object value, string paramName = "")
-            {
-                Ensure.That<ArgumentNullException>(value != null, paramName);
-            }
+                => Ensure.That<ArgumentNullException>(value != null, paramName);
 
             /// <summary>
             /// Ensures the given string value is not null or empty
@@ -197,14 +171,10 @@ namespace System
             public static void NotNullOrEmpty(string value, string paramName = "")
             {
                 if (value == null)
-                {
                     throw new ArgumentNullException(paramName, "String value cannot be null");
-                }
 
                 if (string.Empty.Equals(value))
-                {
                     throw new ArgumentException("String value cannot be empty", paramName);
-                }
             }
         }
     }
