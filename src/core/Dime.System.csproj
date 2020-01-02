@@ -21,7 +21,7 @@
     <IncludeSymbols>True</IncludeSymbols>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Description>Generic utilities added to the System namespace</Description>
     <Copyright>Copyright © 2020</Copyright>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
