@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace System
 {
     /// <summary>
-    ///
+    /// Useful helper to validate the state of the object.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     [DebuggerStepThrough]
     public static class Ensure
     {
@@ -110,6 +112,7 @@ namespace System
         public static void NotEqual<T>(T left, T right, string message = "Values must not be equal")
             => That(left != null && right != null && !left.Equals(right), message);
 
+
         /// <summary>
         /// Ensures given collection contains a value that satisfied a predicate
         /// </summary>
@@ -134,7 +137,7 @@ namespace System
         ///     Thrown if collection is null, empty or not all values satisfies <paramref cref="predicate"/>
         /// </exception>
         public static void Items<T>(IEnumerable<T> collection, Func<T, bool> predicate, string message = "")
-            => That(collection != null && collection.All(predicate), message);
+            => That(collection != null && collection.All(x => predicate(x)), message);
 
         /// <summary>
         /// Argument-specific ensure methods
@@ -150,7 +153,7 @@ namespace System
             ///     Thrown if <paramref cref="condition"/> is false
             /// </exception>
             public static void Is(bool condition, string message = "")
-                => Ensure.That<ArgumentException>(condition, message);
+                => That<ArgumentException>(condition, message);
 
             /// <summary>
             /// Ensures given condition is false
@@ -172,7 +175,18 @@ namespace System
             ///     Thrown if <paramref cref="value" /> is null
             /// </exception>
             public static void NotNull(object value, string paramName = "")
-                => Ensure.That<ArgumentNullException>(value != null, paramName);
+                => That<ArgumentNullException>(value != null, paramName);
+
+            /// <summary>
+            /// Ensures given value is not null
+            /// </summary>
+            /// <param name="value">Value to test for null</param>
+            /// <param name="paramName">Name of the parameter in the method</param>
+            /// <exception cref="System.ArgumentNullException">
+            ///     Thrown if <paramref cref="value" /> is null
+            /// </exception>
+            public static void NotNull(object value, string paramName = "", string message = "")
+                => That<ArgumentNullException>(value != null, paramName, message);
 
             /// <summary>
             /// Ensures the given string value is not null or empty
