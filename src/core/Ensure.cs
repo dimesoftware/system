@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace System
@@ -8,7 +7,6 @@ namespace System
     /// <summary>
     /// Useful helper to validate the state of the object.
     /// </summary>
-    [ExcludeFromCodeCoverage]
     [DebuggerStepThrough]
     public static class Ensure
     {
@@ -112,7 +110,6 @@ namespace System
         public static void NotEqual<T>(T left, T right, string message = "Values must not be equal")
             => That(left != null && right != null && !left.Equals(right), message);
 
-
         /// <summary>
         /// Ensures given collection contains a value that satisfied a predicate
         /// </summary>
@@ -193,16 +190,34 @@ namespace System
             /// </summary>
             /// <param name="value">Value to test for null or empty</param>
             /// <param name="paramName">Name of the parameter in the method</param>
+            /// <exception cref="System.ArgumentNullException">
+            ///     Thrown if <paramref cref="value"/> is null
+            /// </exception>
             /// <exception cref="System.ArgumentException">
-            ///     Thrown if <paramref cref="value"/> is null or empty string
+            ///     Thrown if <paramref cref="value"/> is an empty string
             /// </exception>
             public static void NotNullOrEmpty(string value, string paramName = "")
+                => NotNullOrEmpty(value, paramName, "String value cannot be null or empty.");
+
+            /// <summary>
+            /// Ensures the given string value is not null or empty
+            /// </summary>
+            /// <param name="value">Value to test for null or empty</param>
+            /// <param name="paramName">Name of the parameter in the method</param>
+            /// <param name="message">The exception message</param>
+            /// <exception cref="System.ArgumentNullException">
+            ///     Thrown if <paramref cref="value"/> is null
+            /// </exception>
+            /// <exception cref="System.ArgumentException">
+            ///     Thrown if <paramref cref="value"/> is an empty string
+            /// </exception>
+            public static void NotNullOrEmpty(string value, string paramName = "", string message = "")
             {
                 if (value == null)
-                    throw new ArgumentNullException(paramName, "String value cannot be null");
+                    throw new ArgumentNullException(paramName, message);
 
                 if (string.Empty.Equals(value))
-                    throw new ArgumentException("String value cannot be empty", paramName);
+                    throw new ArgumentException(message, paramName);
             }
         }
     }

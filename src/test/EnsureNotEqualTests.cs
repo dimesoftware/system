@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dime.System.Tests
 {
-    class EnsureNotEqualTests
+    [TestClass]
+    public class EnsureNotEqualTests
     {
     }
 }
