@@ -1,6 +1,6 @@
 # Dime.System
 
-[![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/System%20-%20MASTER%20-%20CI?branchName=master)](https://dev.azure.com/dimenicsbe/Utilities/_build/latest?definitionId=84&branchName=master)
+![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.dime-system?branchName=master) ![Code coverage](https://img.shields.io/azure-devops/coverage/dimenicsbe/utilities/148/master)
 
 ## Introduction
 
@@ -41,10 +41,11 @@ public void MyMethod(MyClass myClassParameter)
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
+
+Pull requests are welcome. Please check out the contribution and code of conduct guidelines.
 
 ## License
 
-MIT
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
