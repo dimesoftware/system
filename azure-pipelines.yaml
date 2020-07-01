@@ -1,28 +1,24 @@
 pool:
-  name: Azure Pipelines
+  vmImage: windows-latest
+variables:
+  BuildConfiguration: 'Release'
+
 steps:
-- task: solidify-labs.chucknorris-build-enhancer.chuck-norris-task.ChuckNorrisTask@0
-  displayName: Quote
-
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
-  inputs:
-    feedsToUse: config
-    nugetConfigPath: tools/Nuget.config
-
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: Restore
   inputs:
     command: restore
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet build'
+  displayName: Build
   inputs:
-    projects: '**/*.sln'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet test'
+  displayName: Test
   inputs:
     command: test
     projects: '**/*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --collect "Code coverage"'
