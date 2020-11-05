@@ -2,7 +2,7 @@
 
 # Extensions to the .NET System namespace
 
-![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.dime-system?branchName=master) ![CodeQL](https://github.com/dimenics/system/workflows/CodeQL/badge.svg) ![Code coverage](https://img.shields.io/azure-devops/coverage/dimenicsbe/utilities/148/master)
+[![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.system?branchName=master)](https://dev.azure.com/dimenicsbe/Utilities/_build/latest?definitionId=171&branchName=master) ![CodeQL](https://github.com/dimenics/system/workflows/CodeQL/badge.svg) ![Code coverage](https://img.shields.io/azure-devops/coverage/dimenicsbe/utilities/171/master)
 
 ## Introduction
 
