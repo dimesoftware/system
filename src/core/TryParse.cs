@@ -1,4 +1,4 @@
-﻿namespace Dime.System
+﻿namespace System
 {
     public static class TryParse
     {
