@@ -8,8 +8,7 @@ namespace Dime.System.Tests
     {
         [TestMethod]
         public void Ensure_NotNullOrEmpty_ConditionIsTrue_ShouldThrowException()
-            => Assert.ThrowsException<Exception>(() => Ensure.NotNullOrEmpty(null, "Items must be equal"),
-                "Items must be equal");
+            => Assert.ThrowsException<Exception>(() => Ensure.NotNullOrEmpty(null, "Items must be equal"), "Items must be equal");
 
         [TestMethod]
         public void Ensure_NotNullOrEmpty_ConditionIsTrue_NoMessage_ShouldThrowException_WithDefaultMessage()

@@ -1,21 +1,24 @@
-# Dime.System
+<p align="center"><img src="assets/logo.png?raw=true" width="350" alt="Logo"></p>
+
+# Extensions to the .NET System namespace
 
 ![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.dime-system?branchName=master) ![CodeQL](https://github.com/dimenics/system/workflows/CodeQL/badge.svg) ![Code coverage](https://img.shields.io/azure-devops/coverage/dimenicsbe/utilities/148/master)
 
 ## Introduction
 
-Extensions to the System namespace.
-
-## Getting Started
-
-- You must have Visual Studio 2019 Community or higher.
-- The dotnet cli is also highly recommended.
+This project is meant to extend the capabilities of the System namespace with extra utility functions.
 
 ## About this project
 
 The most notable types in this assembly include:
 
 - `Ensure`: a handy and lightweight validation class.
+- `TryParse`: try parsing string to integers
+
+## Getting Started
+
+- You must have Visual Studio 2019 Community or higher.
+- The dotnet cli is also highly recommended.
 
 ## Build and Test
 
