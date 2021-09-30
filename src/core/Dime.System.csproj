@@ -9,11 +9,11 @@
 
   <PropertyGroup>
     <AssemblyTitle>Dime.System</AssemblyTitle>
-    <Authors>Dimenics</Authors>
+    <Authors>Dime Software</Authors>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net461</TargetFrameworks>
     <AssemblyName>Dime.System</AssemblyName>
     <PackageId>Dime.System</PackageId>
-    <PackageIconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
