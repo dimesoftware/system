@@ -1,16 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-  </PropertyGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk"> 
   <PropertyGroup>
     <AssemblyTitle>Dime.System</AssemblyTitle>
     <Authors>Dime Software</Authors>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <AssemblyName>Dime.System</AssemblyName>
     <PackageId>Dime.System</PackageId>
     <PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
@@ -21,14 +13,14 @@
     <IncludeSymbols>True</IncludeSymbols>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.6.2</Version>
+    <Version>1.1.0.0</Version>
     <Description>Generic utilities that extend the capabilities in the System namespace.</Description>
-    <Copyright>Copyright © 2020</Copyright>
-    <AssemblyVersion>1.0.6.2</AssemblyVersion>
-    <FileVersion>1.0.6.2</FileVersion>
+    <Copyright>Copyright © 2023</Copyright>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/dimenics/dime-system</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dimesoftware/system</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
